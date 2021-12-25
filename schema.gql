@@ -1,0 +1,54 @@
+enum Direction {
+  inside
+  outside
+}
+
+input VideoInput @embedded {
+  id: ID!
+  provider: String!
+}
+
+input DetectionInput {
+  id: ID! @unique(index: "Detection")
+  intruders: [String!]
+  complete: Boolean
+  date: Time
+  direction: Direction
+  video: VideoInput
+}
+
+type Video @embedded {
+  id: ID!
+  provider: String!
+}
+
+type Cat @collection(name: "cats") {
+  name: ID! @unique(index: "cat")
+  emoji: String
+  detections: [Detection!]
+}
+
+type Detection @collection(name: "detections") {
+  id: ID @unique(index: "detection")
+  intruders: [Cat!]! @relation
+  complete: Boolean
+  date: Time!
+  direction: Direction
+  video: Video
+}
+
+type Query {
+  cats: [Cat!]! @resolver(name: "cats_by_name")
+  cat(name: ID!): Cat @resolver(name: "cat_by_name")
+  detections(name: ID): [Detection]!
+    @resolver(name: "all_detections", paginated: true)
+  detection(id: ID!): Detection @resolver(name: "get_detection")
+}
+
+type Mutation {
+  createDetection(detection: DetectionInput!): Detection
+    @resolver(name: "create_detection")
+  updateDetection(detection: DetectionInput!): Detection
+    @resolver(name: "update_detection")
+  deleteDetection(id: ID!): Detection @resolver(name: "delete_detection")
+}

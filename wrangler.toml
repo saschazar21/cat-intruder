@@ -1,0 +1,15 @@
+name = "cat-intruder"
+type = "javascript"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2021-12-21"
+
+[build]
+command = "./bin/esbuild.js"
+watch_dir = "worker"
+
+[build.upload]
+format = "service-worker"
