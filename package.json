@@ -1,9 +1,9 @@
 {
   "name": "cat-intruder-bot",
   "version": "0.0.0",
-  "description": "A Telegram Bot to notify whenever a cat stepped through the kitty door.",
+  "description": "A Telegram bot which warns about cat intruders.",
   "main": "dist/worker.js",
-  "repository": "https://github.com/saschazar21/cat-intruder-bot",
+  "repository": "https://github.com/saschazar21/cat-intruder",
   "author": {
     "name": "Sascha Zarhuber",
     "email": "saschazar21@yahoo.de",

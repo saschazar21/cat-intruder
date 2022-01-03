@@ -2,7 +2,7 @@
   <img src="assets/cat.gif" alt="An animated GIF showing a cat entering through a kitty door" width="240px" />
   <br />
   <h1>Cat Intruder Bot</h1>
-  <strong>🚨🐈 A Telegram bot, which warns about cat intruders.</strong>
+  <strong>🚨🐈 A Telegram bot which warns about cat intruders.</strong>
   <br />
   <br />
   <br />
