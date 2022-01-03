@@ -6,7 +6,7 @@ const custom = require('../utils/env');
 
 const env = {
   ...process.env,
-  ...custom,
+  ...custom(),
 };
 
 const define = Object.keys(env).reduce((vars, key) => {

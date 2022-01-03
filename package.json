@@ -15,7 +15,7 @@
     "build:check": "tsc --noEmit",
     "build:compile": "./bin/esbuild.js",
     "build": "wrangler build",
-    "serve": "miniflare",
+    "serve": "miniflare -w",
     "tunnel": "lt -p 8787 -s cat-intruder-bot"
   },
   "dependencies": {
